@@ -1,3 +1,28 @@
-<h1>
+<h2>
   {{title}}
-</h1>
+</h2>
+<input 
+  type="text"
+  class="form-control"
+  [(ngModel)] = "username">
+  <br>
+ <p>{{username}}</p>
+ <button 
+  [disabled]="!username"
+  (click)="resetUserNameInput()">button</button>
+<app-landing></app-landing>
+<app-new-comp></app-new-comp>
+
+<button
+  class="btn"
+  (click)="displayToggle()">Display Details</button>
+<p *ngIf="display">Secret Password = Tuna</p>
+<p 
+  *ngFor = "let number of numberArray"
+  [ngStyle] ="{ 
+    'background' : number >= 5 ? 'blue' : 'white',
+    'width': '100px'
+    }"
+  [ngClass] ="{
+    'white-color' : number >= 5
+    }">{{number}}</p>

@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Mivr';
+  username: string = '';
+  display: boolean = false;
+  numberCount: number = 0;
+  numberArray: Array<number> = [];
+
+
+  resetUserNameInput(){
+    this.username = '';
+  }
+
+  displayToggle(){
+    this.display = this.display ? false : true;
+    this.numberCount++;
+    this.numberArray.push(this.numberCount)
+  }
 }
